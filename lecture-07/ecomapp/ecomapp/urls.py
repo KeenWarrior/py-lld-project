@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ecomapp.views import ListCreateProductAPIView
+from ecomapp.views import DairyListCreateAPIView
+from ecomapp.views import DairyRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
     path('', ListCreateProductAPIView.as_view()),
+    path('dairy/', DairyListCreateAPIView.as_view()),
+    path('dairy/<int:pk>/', DairyRetrieveUpdateDestroyAPIView.as_view()),
     path('admin/', admin.site.urls),
 ]
