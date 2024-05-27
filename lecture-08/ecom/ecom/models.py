@@ -27,7 +27,8 @@ class Address(models.Model):
 class ShippingAddress(Address):
     user = models.ForeignKey(
         User,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="shipping_addresses"
     )
 
 
