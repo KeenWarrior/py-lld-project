@@ -1,5 +1,7 @@
 def simple_middleware(get_response):
 
+    print("Setup first middleware")
+
     def middleware(request):
 
         # forward going area
@@ -12,7 +14,10 @@ def simple_middleware(get_response):
 
     return middleware
 
+
 def another_middleware(get_response):
+
+    print("Setup second middleware")
 
     def middleware(request):
 
